@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Calculator</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      margin-top: 50px;
+    }
+    input {
+      padding: 10px;
+      margin: 5px;
+      width: 120px;
+    }
+    button {
+      padding: 10px 15px;
+      margin: 5px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Simple Calculator</h1>
+
+<input id="num1" placeholder="First number">
+<input id="num2" placeholder="Second number">
+
+<br><br>
+
+<button onclick="calc('+')">+</button>
+<button onclick="calc('-')">-</button>
+<button onclick="calc('*')">*</button>
+<button onclick="calc('/')">/</button>
+
+<h2 id="result">Result: </h2>
+
+<script>
+function calc(op) {
+    let num1 = parseFloat(document.getElementById("num1").value);
+    let num2 = parseFloat(document.getElementById("num2").value);
+    let result;
+
+    if (op === '+') result = num1 + num2;
+    if (op === '-') result = num1 - num2;
+    if (op === '*') result = num1 * num2;
+    if (op === '/') result = num1 / num2;
+
+    document.getElementById("result").innerText = "Result: " + result;
+}
+</script>
+
+</body>
+</html>
